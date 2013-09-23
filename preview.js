@@ -5,6 +5,7 @@
         cache = '',
         warn = window.console && console.warn ? console.warn.bind(console) : function(){},
         empty_re = /^\s*$/,
+        help_text = document.getElementById('intro-text').innerHTML,
         s;
 
     function addEventListener( el, name, fn ) {
@@ -48,17 +49,15 @@
         }
 
         addEventListener(window, 'unload', function() {
-            localStorage.setItem('pastek.text', inp.value);
+            localStorage.setItem('pastek.text',
+                                 inp.value != help_text ? inp.value : "");
         });
     }
 
     // intro text
     if (inp.value.length == 0) {
 
-        s = document.getElementById('intro-text').innerHTML;
-
-        inp.value = s.replace(/<!--[\s\S]*?-->/g, ''); // cheat
-
+        inp.value = help_text;
         updateHTML();
     }
 
