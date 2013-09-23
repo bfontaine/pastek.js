@@ -1,0 +1,15 @@
+.row {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+
+#pastek-input {
+    font-family: monaco, monospace;
+}
+
+#html-output {
+    vertical-align: top;
+    padding: 10px 15px;
+}
