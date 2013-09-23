@@ -2,7 +2,9 @@
 
     var inp = document.getElementById('pastek-input'),
         out = document.getElementById('html-output'),
+        cache = '',
         warn = window.console && console.warn ? console.warn.bind(console) : function(){},
+        empty_re = /^\s*$/,
         s;
 
     function addEventListener( el, name, fn ) {
@@ -16,7 +18,16 @@
     }
 
     function updateHTML() {
-        var text = inp.value;
+        var text = inp.value.replace(/\n+$/g, '');
+
+        if (text == cache) { return; }
+
+        cache = text;
+
+        if (empty_re.test(text)) {
+            out.innerHTML = '';
+            return;
+        }
 
         try {
             out.innerHTML = pastek_core.mk_html(text + "\n");
@@ -39,6 +50,16 @@
         addEventListener(window, 'unload', function() {
             localStorage.setItem('pastek.text', inp.value);
         });
+    }
+
+    // intro text
+    if (inp.value.length == 0) {
+
+        s = document.getElementById('intro-text').innerHTML;
+
+        inp.value = s.replace(/<!--[\s\S]*?-->/g, ''); // cheat
+
+        updateHTML();
     }
 
 })();

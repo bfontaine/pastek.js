@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="language" content="en" />
 
-        <title>Pastek JS</title>
+        <title>Pastek Live Editor</title>
 
         <meta name="viewport" content="width=device-width" />
 
@@ -13,10 +13,38 @@
     </head>
     <body>
         <div class="row">
-            <textarea class="cell" cols="60" rows="30" id="pastek-input"></textarea>
+            <textarea class="cell" cols="50" rows="25" id="pastek-input"></textarea>
             <div class="cell" id="html-output"></div>
         </div>
 
+        <script type="text/x-data" id="intro-text"># Pastek Live Editor
+
+
+This is a live editor for Pastek. Here are the basics:
+
+* Add `emphasis` on a piece of text by surrounding it with two backquotes
+* Strong ``text`` is surrounded by two backquotes on each side
+* Make titles with one to six `#` (like Markdown)
+* Write ```code``` surrounded by <code>\`\`\`</code>
+* Use ```*``` for lists, and add more ```*```s to make
+** a sub-list
+*** and another one
+* Shortcuts to common math symbols are available. For example, <!--
+--> ```&a``` gives &a, while ```&l``` gives &l and ```&p``` gives &p.
+* Subscripts and superscripts are supported with the same syntax as Latex. use <!--
+--> ```_``` for subscripts (e.g. x_i) and ```^``` for superscripts (e.g. x^2).
+* You can even make simple tables:
++-----+-----+
+| Foo | Bar |
++-----+-----+
+| &p^2 | 42 |
++-----+-----+
+* Characters are escaped with a backslash
+* Comments are written using OCaml syntax, which allows you to nest them <!--
+--> (* Here is a comment (* and a nested one *) :) *)
+* That's it!
+
+</script>
         <script>var pastek_core = {};</script>
         <script src="./pastek_core_js_0.13.07.js"></script>
         <script src="./preview.js"></script>
