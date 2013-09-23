@@ -10,7 +10,7 @@
         try {
             out.innerHTML = pastek_core.mk_html(text + "\n");
         } catch(e) {
-            warn('' + e + ', text=<'+text.replace('\n', '\\n')+'>');
+            warn('' + e + ', text=<'+text.replace(/\n/g, '\\n')+'>');
         }
     }
 
