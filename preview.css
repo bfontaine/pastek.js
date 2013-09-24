@@ -8,6 +8,15 @@
 #pastek-input {
     font-family: monaco, monospace;
     font-size: 0.8rem;
+    outline: none;
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin-left: 0;
+}
+
+#pastek-input:focus {
+    border-color: #333;
 }
 
 #html-output {
@@ -17,6 +26,25 @@
 }
 #html-output :first-child {
     margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 3px 6px 2px 5px;
+    border: 1px solid #999;
+    border-radius: 2px;
+}
+.button:focus, .button:hover {
+    border-color: #666;
+}
+.button:active {
+    border-color: #333;
+}
+
+.button + .button {
+    margin-left: 7px;
 }
 
 /* Output Styling */
