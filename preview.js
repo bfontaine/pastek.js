@@ -100,10 +100,13 @@
             rawbutton.setAttribute('href', createSourceURL());
         });
 
-        addEventListener(savebutton, 'click', function() {
+        addEventListener(savebutton, 'click', function(e) {
+            var name = prompt('Select a filename:', 'pastek.txt');
+
+            if (name == null) { e.preventDefault(); return false; }
+
             savebutton.setAttribute('href', createSourceURL());
-            savebutton.setAttribute('download',
-                                    prompt('Select a filename:', 'pastek.txt'));
+            savebutton.setAttribute('download', name);
         });
 
         tools.appendChild(rawbutton);
