@@ -1,8 +1,7 @@
-pastek_js
-=========
+# pastek.js
 
-# How to
-For now, javascript variable `ocaml_core` has to be initialized before including `pastek_core_js.*.js` file.
-```javascript
-var ocaml_core = {};
-```
+To build `pastek.js`, see [pastek/core][core]. A live editor using `pastek.js`
+is available [online][liveeditor].
+
+[core]: https://github.com/pastek-project/core
+[liveeditor]: http://www.pastek-project.org/pastek_js
