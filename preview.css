@@ -5,6 +5,19 @@
     display: table-cell;
 }
 
+#input-container {
+    position: fixed;
+    width: 45%;
+    top: 0;
+    bottom: 0;
+}
+
+#textarea-container {
+    position: absolute;
+    top: 0;
+    bottom: 3em;
+}
+
 #pastek-input {
     font-family: monaco, monospace;
     font-size: 0.8rem;
@@ -12,17 +25,26 @@
     border: 1px solid #999;
     border-radius: 2px;
     padding: 2px 4px;
-    margin-left: 0;
+    width: 80ex;
+    height: 100%;
 }
 
 #pastek-input:focus {
     border-color: #333;
 }
 
+#input-tools {
+    position: absolute;
+    bottom: 0;
+}
+
+
 #html-output {
     vertical-align: top;
     padding: 10px 15px;
-    max-width: 80ex;
+    width: 50%;
+    position: absolute;
+    right: 0;
 }
 #html-output :first-child {
     margin-top: 0;

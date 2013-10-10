@@ -1,38 +1,38 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="language" content="en" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="language" content="en" />
 
-        <title>Pastek Live Editor</title>
+    <title>Pastek Live Editor</title>
 
-        <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
 
-        <meta name="keywords" content="pastek, markdown, live editor" />
-        <meta name="description" content="Pastek Live Editor lets you try the Pastek markup language with real-time HTML rendering." />
+    <meta name="keywords" content="pastek, markdown, live editor" />
+    <meta name="description" content="Pastek Live Editor lets you try the Pastek markup language with real-time HTML rendering." />
 
-        <meta property="og:title" content="Pastek Live Editor" />
-        <meta property="og:description" content="Pastek Live Editor lets you try the Pastek markup language with real-time HTML rendering." />
-        <meta property="og:type"  content="website" />
-        <meta property="og:url"   content="http://www.pastek-project.org/pastek_js/" />
-        <meta property="og:image" content="https://2.gravatar.com/avatar/73bd939a418d388019344e1d926e27cc?s=64" />
+    <meta property="og:title" content="Pastek Live Editor" />
+    <meta property="og:description" content="Pastek Live Editor lets you try the Pastek markup language with real-time HTML rendering." />
+    <meta property="og:type"  content="website" />
+    <meta property="og:url"   content="http://www.pastek-project.org/pastek_js/" />
+    <meta property="og:image" content="https://2.gravatar.com/avatar/73bd939a418d388019344e1d926e27cc?s=64" />
 
-        <link rel="stylesheet" href="preview.css" media="all" />
-        <link rel="icon" type="image/png" href="https://2.gravatar.com/avatar/73bd939a418d388019344e1d926e27cc?s=32" />
-        <link rel="apple-touch-icon" type="image/png" href="https://2.gravatar.com/avatar/73bd939a418d388019344e1d926e27cc?s=128" />
-    </head>
-    <body>
-        <div class="row">
-            <div class="cell" id="input-container">
-                <textarea cols="50" rows="25" id="pastek-input" placeholder="Type some Pastek..."></textarea>
-                <div id="input-tools"></div>
-                <p>
-                  By the <a href="https://github.com/pastek-project/">pastek-project</a> team.<br />
-                  Special thanks to <a href="http://ocsigen.org/js_of_ocaml/">js_of_ocaml</a> and <a href="http://gallium.inria.fr/~fpottier/menhir/">menhir</a> developers.
-                </p>
-            </div>
-            <div class="cell" id="html-output"></div>
+    <link rel="stylesheet" href="preview.css" media="all" />
+    <link rel="icon" type="image/png" href="https://2.gravatar.com/avatar/73bd939a418d388019344e1d926e27cc?s=32" />
+    <link rel="apple-touch-icon" type="image/png" href="https://2.gravatar.com/avatar/73bd939a418d388019344e1d926e27cc?s=128" />
+  </head>
+  <body>
+    <div class="row">
+      <div class="cell" id="input-container">
+        <div id="textarea-container">
+          <textarea id="pastek-input"
+                    placeholder="Type some Pastek...">
+          </textarea>
         </div>
+        <div id="input-tools"></div>
+      </div>
+      <div class="cell" id="html-output"></div>
+    </div>
 
         <script type="text/x-pastek" id="intro-text"># Pastek Live Editor
 
