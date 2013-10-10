@@ -3,12 +3,23 @@
     var inp   = document.getElementById('pastek-input'),
         out   = document.getElementById('html-output'),
         tools = document.getElementById('input-tools'),
+
+        // saving tools
         rawbutton = document.createElement('a'),
         savebutton,
+        last_filename = 'pastek.txt',
+        
+        // cache string used to check if the text in the box has changed or not
         cache = '',
+        
+        // helpers
         warn = window.console && console.warn ? console.warn.bind(console) : function(){},
+
+        // regexes
         empty_re = /^\s*$/,
+
         help_text = document.getElementById('intro-text').innerHTML,
+
         s;
 
     function addEventListener( el, name, fn, useCapture ) {
@@ -94,19 +105,19 @@
 
         savebutton = rawbutton.cloneNode(true);
         savebutton.textContent = savebutton.innerText = 'Save as…';
-        savebutton.setAttribute('download', 'pastek.txt');
+        savebutton.setAttribute('download', last_filename);
 
         addEventListener(rawbutton, 'click', function() {
             rawbutton.setAttribute('href', createSourceURL());
         });
 
         addEventListener(savebutton, 'click', function(e) {
-            var name = prompt('Select a filename:', 'pastek.txt');
+            var name = prompt('Select a filename:', last_filename);
 
             if (name == null) { e.preventDefault(); return false; }
 
             savebutton.setAttribute('href', createSourceURL());
-            savebutton.setAttribute('download', name);
+            savebutton.setAttribute('download', last_filename = name);
         });
 
         tools.appendChild(rawbutton);
