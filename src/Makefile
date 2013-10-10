@@ -5,10 +5,11 @@ parser.cmo \
 lexer.cmo \
 html_of_core.cmo
 
+# You need to set this variable to the path of pastek core
 CORE_DIR=
 
 OCAMLC=ocamlfind ocamlc
-FLAGS=-package js_of_ocaml -package js_of_ocaml.syntax -syntax camlp4o -linkpkg -I $(CORE_DIR)
+FLAGS=-package js_of_ocaml -package js_of_ocaml.syntax -syntax camlp4o -linkpkg -I $(CORE_DIR)/src
 
 JSOFOCAML=js_of_ocaml
 
@@ -23,6 +24,7 @@ JS=pastek.js
 all: $(JSBYTE) $(JSTMP) $(JS)
 
 $(JSBYTE): pastek_core_js.ml
+	make -C $(CORE_DIR) pastek
 	$(OCAMLC) $(FLAGS) $(CORE_FILES) $< -o $@
 
 $(JSTMP): $(JSBYTE)
