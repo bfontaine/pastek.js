@@ -12,7 +12,6 @@ git clone https://github.com/pastek-project/pastek.js.git # clone this repo
 git clone https://github.com/pastek-project/core.git      # clone the core
 make CORE_DIR=../../core -C src                           # make both
 mv src/pastek.js .                                        # copy the main file
-cd -                                                      # come back
 ```
 
 If you already have pastek/core and a local clone of this repo, just `cd` into
