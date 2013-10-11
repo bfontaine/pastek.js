@@ -16,6 +16,7 @@
     position: absolute;
     top: 0;
     bottom: 3em;
+    width: 100%;
 }
 
 #pastek-input {
@@ -25,7 +26,8 @@
     border: 1px solid #999;
     border-radius: 2px;
     padding: 2px 4px;
-    width: 80ex;
+    width: 100%;
+    max-width: 80ex;
     height: 100%;
 }
 
