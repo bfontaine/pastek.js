@@ -2,4 +2,4 @@
 
 #input-container { display: none; }
 
-#html-output { width: 160mm; }
+#html-output { position: static; width: 160mm; }
