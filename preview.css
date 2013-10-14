@@ -82,6 +82,9 @@ code {
 table {
     border-collapse: collapse;
 }
+table + table {
+    margin-top: 1ex;
+}
 table, tr, th, td {
     border: 1px solid #AAA;
 }
