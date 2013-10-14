@@ -3,7 +3,8 @@ html_shortcuts.cmo \
 AST.cmo \
 parser.cmo \
 lexer.cmo \
-html_of_core.cmo
+html_of_core.cmo \
+pastek_core.cmo
 
 # You need to set this variable to the path of pastek core
 CORE_DIR=
