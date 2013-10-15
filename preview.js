@@ -92,9 +92,8 @@
     }
 
     /**
-     * On startup include the help text if the input is empty
+     * On startup, include the help text if the input is empty
      **/
-
     if (inp.value.length == 0) {
 
         inp.value = help_text;
@@ -105,7 +104,6 @@
      * Save Pastek input as a file using a Blob, if it's supported
      * by the browser.
      **/
-
     function createSourceURL() {
         var b = new Blob([inp.value], {type: "text/plain"});
         return URL.createObjectURL(b);
@@ -142,7 +140,9 @@
 
     }
 
-    // Editing a local file (#2)
+    /**
+     * Edit a file from your local storage (#2)
+     **/
     if (window.File && window.FileReader) (function(){
         var fileinput, button,
             ref = '_local_file';
@@ -151,7 +151,7 @@
             href: '#',
            'for': ref
         }, 'button');
-        button.innerText = button.textContent = 'Edit a local file';
+        button.innerText = button.textContent = 'Edit a local file…';
 
         fileinput = createElement('input', {
             type: 'file',
@@ -177,5 +177,9 @@
         tools.appendChild(button);
 
     })();
+
+    /**
+     * Auto-expand the textarea when you type in it
+     **/
 
 })();
