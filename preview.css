@@ -89,6 +89,11 @@ kbd {
     box-shadow: inset 2px -2px 0 #CCC;
 }
 
+kbd:empty {
+    box-shadow: none;
+    background-color: inherit;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -106,4 +111,13 @@ td p, th p {
 }
 tr:nth-child(even) {
     background-color: #F6F6F6;
+}
+
+hr {
+    outline: 1px solid #DDD;
+    border: none;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted #AAA;
 }
