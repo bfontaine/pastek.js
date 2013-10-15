@@ -4,16 +4,32 @@
         out   = document.getElementById('html-output'),
         tools = document.getElementById('input-tools'),
 
+        body  = document.getElementsByTagName('body')[0],
+
         // saving tools
-        rawbutton = document.createElement('a'),
+        rawbutton,
         savebutton,
         last_filename = 'pastek.txt',
-        
+
         // cache string used to check if the text in the box has changed or not
         cache = '',
-        
+
         // helpers
-        warn = window.console && console.warn ? console.warn.bind(console) : function(){},
+        noop = function() {},
+        warn = window.console && console.warn ? console.warn.bind(console) : noop,
+
+        createElement = function( name, opts, klass ) {
+            var e = document.createElement( name ), o;
+            for (o in opts) {
+                if (opts.hasOwnProperty(o)) {
+                    e.setAttribute( o, opts[o] );
+                }
+            }
+            if (klass) {
+                e.className = klass;
+            }
+            return e;
+        },
 
         // regexes
         empty_re = /^\s*$/,
@@ -97,11 +113,12 @@
 
     if (window.Blob && window.URL && typeof URL.createObjectURL == 'function') {
 
-        rawbutton.className = 'button';
-        rawbutton.textContent = rawbutton.innerText = 'View raw';
-        rawbutton.setAttribute('href', '#');
-        rawbutton.setAttribute('target', '_blank');
-        rawbutton.setAttribute('title', 'Right-click → "Save as…"');
+        rawbutton = createElement('a', {
+            href: '#',
+            target: '_blank',
+            title: 'Right-click → "Save as…"'
+        }, 'button');
+        rawbutton.textContent = rawbutton.innerText = 'View raw…';
 
         savebutton = rawbutton.cloneNode(true);
         savebutton.textContent = savebutton.innerText = 'Save as…';
@@ -124,5 +141,41 @@
         tools.appendChild(savebutton);
 
     }
+
+    // Editing a local file (#2)
+    if (window.File && window.FileReader) (function(){
+        var fileinput, button,
+            ref = '_local_file';
+
+        button = createElement('label', {
+            href: '#',
+           'for': ref
+        }, 'button');
+        button.innerText = button.textContent = 'Edit a local file';
+
+        fileinput = createElement('input', {
+            type: 'file',
+            accept: 'text/*'
+        }, 'hidden');
+        fileinput.id = ref;
+
+        addEventListener( fileinput, 'change', function() {
+            var f = fileinput.files[0],
+                reader;
+            if (!f) { return; }
+
+            reader = new FileReader();
+            reader.onload = function() {
+                inp.value = reader.result.slice(0, 0xFFFFF);
+                updateHTML();
+            };
+            reader.readAsText(f);
+        });
+
+
+        body.appendChild(fileinput);
+        tools.appendChild(button);
+
+    })();
 
 })();
