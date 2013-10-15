@@ -10,8 +10,10 @@ You need [pastek/core][core] in order to build `pastek.js`.
 ```
 git clone https://github.com/pastek-project/pastek.js.git # clone this repo
 git clone https://github.com/pastek-project/core.git      # clone the core
+cd pastek.js
 make CORE_DIR=../../core -C src                           # make both
 mv src/pastek.js .                                        # copy the main file
+cd -
 ```
 
 If you already have pastek/core and a local clone of this repo, just `cd` into
