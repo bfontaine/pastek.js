@@ -1,5 +1,5 @@
-body { width: 210mm; }
-
 #input-container { display: none; }
 
-#html-output { position: static; width: 160mm; }
+#html-output { width: 100%; }
+
+@page { size: 210mm 297mm; margin: 15mm 20mm; }
