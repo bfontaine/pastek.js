@@ -1,13 +1,13 @@
 CORE_FILES=\
-html_shortcuts.cmo \
+sugar.cmo \
 AST.cmo \
 parser.cmo \
 lexer.cmo \
-html_of_core.cmo \
+html.cmo \
 pastek_core.cmo
 
 # You need to set this variable to the path of pastek core
-CORE_DIR=/home/ju/workspace/pastek/core
+CORE_DIR=
 
 OCAMLC=ocamlfind ocamlc
 FLAGS=-package js_of_ocaml -package js_of_ocaml.syntax -syntax camlp4o -linkpkg -I $(CORE_DIR)/src

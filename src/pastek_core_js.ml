@@ -22,7 +22,7 @@
 
 open Parser
 open Lexer
-open Html_of_core
+open Html
 open Pastek_core
 
 let mk_html_of_js_string s =
