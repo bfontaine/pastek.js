@@ -32,5 +32,5 @@ A live editor based on `pastek.js` is available [online][liveeditor].
 
 [org]: https://github.com/pastek-project
 [core]: https://github.com/pastek-project/core
-[liveeditor]: http://www.pastek-project.org/pastek.js
+[liveeditor]: http://pastek-project.github.io/pastek.js/
 [jsofo]: http://ocsigen.org/js_of_ocaml/
