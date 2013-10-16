@@ -1,7 +1,9 @@
 #input-container { display: none; }
 
-#html-output { width: 100%; }
+#html-output { width: 100%; float: none; padding: 0; }
 
-@page { size: 210mm 297mm; margin: 15mm 20mm; }
+#html-output:first-child { margin-top: auto; }
+
+@page { size: 210mm 297mm; margin: 20mm 25mm; }
 
 ul, p, table, h1, h2, h3, h4, h5, h6, pre, blockquote  { page-break-inside: avoid; }

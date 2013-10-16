@@ -1,11 +1,5 @@
-.hidden { display: none }
 
-.row {
-    display: table-row;
-}
-.cell {
-    display: table-cell;
-}
+.hidden { display: none }
 
 #input-container {
     position: fixed;
@@ -17,7 +11,7 @@
 #textarea-container {
     position: absolute;
     top: 0;
-    bottom: 3em;
+    bottom: 3rem;
     width: 100%;
 }
 
@@ -27,7 +21,7 @@
     outline: none;
     border: 1px solid #999;
     border-radius: 2px;
-    padding: 2px 4px;
+    padding: 0.25rem;
     width: 100%;
     max-width: 80ex;
     height: 100%;
@@ -40,15 +34,18 @@
 #input-tools {
     position: absolute;
     bottom: 0;
+    height: 1.5em;
+    margin: 0.5em 0;
+    vertical-align: middle;
 }
-
 
 #html-output {
-    vertical-align: top;
-    padding: 10px 15px;
     width: 50%;
-    margin-right: 0;
+    float: right;
+    vertical-align: top;
+    padding: 1rem 1.5rem;
 }
+
 #html-output :first-child {
     margin-top: 0;
 }
@@ -63,6 +60,7 @@
 }
 .button:focus, .button:hover {
     border-color: #666;
+background-color: #BBB;
 }
 .button:active {
     border-color: #333;
