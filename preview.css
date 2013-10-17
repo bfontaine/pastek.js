@@ -75,12 +75,12 @@ background-color: #BBB;
 code {
     background-color: #EEE;
     display: inline-block;
-    padding: 1ex;
 }
 
 pre {
     max-width: 80ex;
     overflow: auto;
+    padding: 1ex;
 }
 
 kbd {
