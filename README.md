@@ -1,3 +1,3 @@
-# pastek.js is not ready for new pastek version.
+# Pastek.js
 
-Do not look at it.
+In-browser editor for Pastek.
